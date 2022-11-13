@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>お稽古一覧</title>
+  </head>
+  <body>
+  <h1>お稽古一覧</h1>
+  <%= render 'shared/flash' %>
+  <% @notes.each do |note| %>
+    <tr>
+        <td><%= note.song_title %></td>
+        <td><%= note.singer_name %></td>
+        <td><%= note.take_note %></td>
+        <td><%= link_to 'Show', note %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  <%= button_to t('.logout'), logout_path, method: :delete %>
+  <%= button_to t('.note'), new_note_path, method: :get %>
+  <%= button_to t('.brief_note'), brief_notes_path, method: :get %>
+  </body>
+</html> 

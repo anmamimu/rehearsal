@@ -1,0 +1,67 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    post: '投稿'
+    search_word: '検索ワード'
+    show: '詳細'
+    delete: '排除'
+    edit: '編集'
+    password_reset: 'パスワードリセット'
+    unspecified: '選択しない'
+    message:
+      require_login: 'ログインしてください'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      updated: '%{item}を更新しました'
+      not_updated: '%{item}を更新出来ませんでした'
+      deleted: '%{item}を削除しました'
+      delete_confirm: '削除しますか？'
+      not_authorized: '権限がありません'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  sessions:
+    new:
+      login: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: ''
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  static_pages:
+    top:
+      login: 'ログイン'
+      new_user: '新規登録'
+  notes:
+    index:
+      logout: 'ログアウト'
+      note: 'メモする'
+      brief_note: '簡易メモ'
+    new:
+      title: 'メモ新規登録'
+      song_title: '曲名'
+      singer_name: '歌手名'
+      take_note: 'メモ'
+      make_a_note: 'メモを作る'
+      success: 'メモを作成します'
+      fail: 'メモを作成出来ませんでした'
+    edit: 
+      make_a_note: '更新する'
+  brief_notes:
+    index:
+      brief_note: '簡易メモ作成'
+      note_index: 'メモ一覧ページ'
+    new:
+      title: 'タイトル'
+      body: '簡易メモ'
+      make_a_note: '簡易メモを登録する'
+    edit:
+      make_a_note: '簡易メモを更新する'

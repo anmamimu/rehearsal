@@ -1,0 +1,5 @@
+<div>タイトル: <%= @note.song_title %></div>
+<div>歌手名: <%= @note.singer_name %></div>
+<div>メモ: <%= @note.take_note %></div>
+<td><%= link_to 'Edit', edit_note_path(@note) %></td>
+<td><%= link_to 'Index', notes_path %></td>

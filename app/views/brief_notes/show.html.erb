@@ -1,0 +1,6 @@
+show
+
+<div>タイトル: <%= @brief_note.title %></div>
+<div>簡易メモ: <%= @brief_note.body %></div>
+<td><%= link_to 'Edit', edit_brief_note_path(@brief_note) %></td>
+<td><%= link_to 'Index', brief_notes_path %></td>

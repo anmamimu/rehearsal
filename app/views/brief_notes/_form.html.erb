@@ -1,0 +1,12 @@
+<%= form_with model: @brief_note, local: true do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+    <div class="form-group mt-3 mb-3">
+      <%= f.label :title, t('.title') %><br>
+      <%= f.text_field :title  %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.label :body, t('.body') %><br>
+      <%= f.text_field :body  %>
+    </div>
+    <%= f.submit class: 'btn btn-primary' %>
+<% end %>

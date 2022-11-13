@@ -1,0 +1,2 @@
+module BriefNotesHelper
+end
