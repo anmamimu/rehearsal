@@ -49,8 +49,6 @@ ja:
       title: 'メモ新規登録'
       song_title: '曲名'
       singer_name: '歌手名'
-      take_note: 'メモ'
-      make_a_note: 'メモを作る'
       success: 'メモを作成します'
       fail: 'メモを作成出来ませんでした'
     edit: 

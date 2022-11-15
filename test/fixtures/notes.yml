@@ -3,11 +3,9 @@
 one:
   song_title: MyString
   singer_name: MyString
-  take_note: MyText
   user: 1
 
 two:
   song_title: MyString
   singer_name: MyString
-  take_note: MyText
   user: 1

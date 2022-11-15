@@ -42,7 +42,7 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:song_title, :singer_name, :take_note)
+    params.require(:note).permit(:song_title, :singer_name, :content)
   end
 
   def find_note

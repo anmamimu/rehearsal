@@ -11,7 +11,6 @@
     <tr>
         <td><%= note.song_title %></td>
         <td><%= note.singer_name %></td>
-        <td><%= note.take_note %></td>
         <td><%= link_to 'Show', note %></td>
         <td><%= link_to 'Edit', edit_note_path(note) %></td>
         <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
