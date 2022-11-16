@@ -1,9 +1,10 @@
 class NotesController < ApplicationController
   skip_before_action :require_login, only: :create
   before_action :find_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:index, :search]
 
   def index
-    @notes = Note.all
+    @notes = @q.result
   end
 
   def show
@@ -39,6 +40,10 @@ class NotesController < ApplicationController
     redirect_to notes_path, success: t('defaults.message.deleted', item: 'メモ')
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
 
   def note_params
@@ -48,4 +53,9 @@ class NotesController < ApplicationController
   def find_note
     @note = current_user.notes.find(params[:id])
   end
+
+  def set_q
+    @q = Note.ransack(params[:q])
+  end
+
 end

@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :users
-  resources :notes 
   resources :brief_notes
+  
+  resources :notes do
+    collection do
+      get 'search'
+    end
+  end
+  
 end
