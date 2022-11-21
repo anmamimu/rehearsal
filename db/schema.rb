@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_14_124054) do
+ActiveRecord::Schema.define(version: 2022_11_16_151307) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -59,9 +59,26 @@ ActiveRecord::Schema.define(version: 2022_11_14_124054) do
     t.index ["user_id"], name: "index_brief_notes_on_user_id"
   end
 
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
+  end
+
+  create_table "note_hashtag_relations", force: :cascade do |t|
+    t.integer "note_id"
+    t.integer "hashtag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hashtag_id"], name: "index_note_hashtag_relations_on_hashtag_id"
+    t.index ["note_id"], name: "index_note_hashtag_relations_on_note_id"
+  end
+
   create_table "notes", force: :cascade do |t|
     t.string "song_title"
     t.string "singer_name"
+    t.text "hashbody"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -80,5 +97,7 @@ ActiveRecord::Schema.define(version: 2022_11_14_124054) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "brief_notes", "users"
+  add_foreign_key "note_hashtag_relations", "hashtags"
+  add_foreign_key "note_hashtag_relations", "notes"
   add_foreign_key "notes", "users"
 end

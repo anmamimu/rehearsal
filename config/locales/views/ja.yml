@@ -49,6 +49,7 @@ ja:
       title: 'メモ新規登録'
       song_title: '曲名'
       singer_name: '歌手名'
+      hashbody: 'ハッシュタグ'
       success: 'メモを作成します'
       fail: 'メモを作成出来ませんでした'
     edit: 

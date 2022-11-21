@@ -7,8 +7,7 @@ class NotesController < ApplicationController
     @notes = @q.result
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @note = Note.new
@@ -44,10 +43,22 @@ class NotesController < ApplicationController
     @results = @q.result
   end
 
+  def hashtag
+    @user = current_user
+    if params[:name].nil?
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.notes.count}
+    else
+      @hashtag = Hashtag.find_by(hashname: params[:name])
+      @note = @hashtag.notes
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.notes.count}
+    end
+  end
+
+
   private
 
   def note_params
-    params.require(:note).permit(:song_title, :singer_name, :content)
+    params.require(:note).permit(:song_title, :singer_name, :hashbody, :content, hashtag_ids: [])
   end
 
   def find_note

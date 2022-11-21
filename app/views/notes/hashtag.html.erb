@@ -1,0 +1,34 @@
+<div class="row">
+  <td><%= link_to 'Index', notes_path %></td>
+
+  <% if params[:name] == nil %>
+
+  <% else %>
+
+    <h2><%= @hashtag.hashname %></h2>
+      <ul>
+        <% @note.each do |note| %>
+          <tr>
+            <td><%= note.song_title %></td>
+            <td><%= note.singer_name %></td>
+            <td><%= link_to 'Show', note %></td>
+            <td><%= link_to 'Edit', edit_note_path(note) %></td>
+            <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </ul>
+      
+      <div class="row">
+        <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
+          <div class= "hashtag-name">
+            <% @hashtags.sort.reverse.each do |count| %>
+              <% count[1].each do |hashtag| %>
+                <p><%= link_to  "##{hashtag.hashname} (#{hashtag.notes.count}) 件","/note/hashtag/#{hashtag.hashname}",data: {"turbolinks" => false} %>
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
