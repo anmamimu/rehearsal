@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    @notes = @q.result
+    @notes = @q.result.order(created_at: :desc).page(params[:page])
   end
 
   def show; end

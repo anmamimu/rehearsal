@@ -32,5 +32,6 @@
       <%= button_to t('.note'), new_note_path, method: :get %>
       <%= button_to t('.brief_note'), brief_notes_path, method: :get %>
     </table>
+    <%= paginate @notes, theme: 'bootstrap-5' %>
   </body>
 </html> 
