@@ -31,6 +31,7 @@
       <%= button_to t('.logout'), logout_path, method: :delete %>
       <%= button_to t('.note'), new_note_path, method: :get %>
       <%= button_to t('.brief_note'), brief_notes_path, method: :get %>
+      <%= button_to t('.user_information'), edit_user_path(:id), method: :get %>
     </table>
     <%= paginate @notes, theme: 'bootstrap-5' %>
   </body>

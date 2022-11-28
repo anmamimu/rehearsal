@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user = login(params[:email], params[:password])
       redirect_back_or_to notes_url, success: 'ログインしました'
     else
-      flash[:alert] = 'ログイン失敗'
+      flash[:danger] = 'ログイン失敗'
       render :new
     end
   end

@@ -45,6 +45,7 @@ ja:
       logout: 'ログアウト'
       note: 'メモする'
       brief_note: '簡易メモ'
+      user_information: 'ユーザー情報変更'
     new:
       title: 'メモ新規登録'
       song_title: '曲名'
