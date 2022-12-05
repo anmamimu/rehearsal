@@ -18,7 +18,7 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to notes_path, success: t('defaults.message.created', item: '新規メモ')
     else
-      flash.now[:danger] =  t('efaults.message.not_created', item: '新規メモ')
+      flash.now[:danger] =  t('defaults.message.not_created', item: '新規メモ')
       render :new
     end 
   end

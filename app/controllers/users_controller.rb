@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
-  before_action :infometion, only: [:edit, :update, :delete]
+  before_action :infometion, only: [:show, :edit, :update, :delete]
 
   def new
     @user = User.new
@@ -9,11 +9,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to notes_url
+      redirect_to login_url
     else
       render :new
     end
   end
+
+  def show; end
 
   def edit; end
 
