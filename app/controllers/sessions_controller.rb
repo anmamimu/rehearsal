@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
+  skip_before_action :require_login, only: [:new, :create, :guest_login]
 
   def index
     @user = User.new
@@ -14,8 +14,18 @@ class SessionsController < ApplicationController
     end
   end
 
+  def guest_login
+    @guest_user = User.create(
+    email: SecureRandom.alphanumeric(10) + "@email.com",
+    password: 'password',
+    role: 'general'
+    )
+    auto_login(@guest_user)
+    redirect_to notes_url, success: 'ゲストとしてログインしました'
+  end
+
   def destroy
     logout
-    redirect_to(root_url, notice: 'ログアウトしました')
+    redirect_to(root_url, primary: 'ログアウトしました')
   end
 end

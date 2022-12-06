@@ -1,7 +1,9 @@
 <div class='top-wrapper'>
   <div class='top-inner-text'>
+    <%= render 'shared/flash' %>
     <h1>日本舞踊のアプリ</h1>
     <%= link_to t(".login"), login_path %>
     <%= link_to t(".new_user"), new_user_path %>
+    <%= link_to t(".guest_user"), guest_login_path %>
   </div>
 </div>
