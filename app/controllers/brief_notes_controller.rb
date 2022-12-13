@@ -2,7 +2,7 @@ class BriefNotesController < ApplicationController
   before_action :find_brief_note, only: [:edit, :update, :destroy]
 
   def index
-    @brief_notes = BriefNote.all
+    @brief_notes = current_user.brief_notes.all
   end
 
   def new
@@ -10,11 +10,11 @@ class BriefNotesController < ApplicationController
   end
 
   def create
-    @brief_note = current_user.brief_note.new(brief_note_params)
+    @brief_note = current_user.brief_notes.new(brief_note_params)
     if @brief_note.save
       redirect_to brief_notes_path, success: t('defaults.message.created', item: '新規簡易メモ')
     else
-      flash.now[:danger] = t('efaults.message.not_created', item: '新規簡易メモ')
+      flash.now[:danger] = t('defaults.message.not_created', item: '新規簡易メモ')
       render :new
     end
   end
@@ -46,6 +46,6 @@ class BriefNotesController < ApplicationController
   end
 
   def find_brief_note
-    @brief_note = current_user.brief_note.find(params[:id])
+    @brief_note = current_user.brief_notes.find(params[:id])
   end
 end

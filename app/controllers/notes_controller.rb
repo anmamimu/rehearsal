@@ -66,7 +66,7 @@ class NotesController < ApplicationController
   end
 
   def set_q
-    @q = Note.ransack(params[:q])
+    @q = current_user.notes.ransack(params[:q])
   end
 
 end

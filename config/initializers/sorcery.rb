@@ -4,10 +4,12 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:reset_password]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
+  config.user_config do |user|
+    user.reset_password_mailer = UserMailer
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
@@ -242,7 +244,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.battlenet.callback_url = "http://localhost:3000/oauth/callback?provider=battlenet"
   # config.battlenet.scope = "openid"
   # --- user config ---
-  config.user_config do |user|
+  
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`

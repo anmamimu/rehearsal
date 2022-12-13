@@ -19,6 +19,7 @@ ja:
       deleted: '%{item}を削除しました'
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
+      password_resets: 'パスワード変更用にメールを送信しました'
   users:
     new:
       title: 'ユーザー登録'
@@ -66,3 +67,13 @@ ja:
       make_a_note: '簡易メモを登録する'
     edit:
       make_a_note: '簡易メモを更新する'
+  password_resets:
+    new:
+      title: 'パスワード変更しますか？'
+      email: 'メールアドレス'
+      submit: 'パスワードを変更する'
+    edit:
+      title: 'パスワード変更画面'
+      email: 'メールアドレス'
+      password: 'パスワード'
+      password_confirmation: 'パスワード確認'
