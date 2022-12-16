@@ -1,0 +1,29 @@
+<header> 
+  <nav class="navbar navbar-expand-md" style="background-color: #e3f2fd;">
+    <button class="btn btn-square btn-ghost">
+      <%= link_to root_path do %>
+        <%= image_tag 'okeiko_siro', size: "30x30" %>
+      <% end %>
+    </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav justify-content-start">
+              <li class="nav-item">
+                  <a class="nav-link" href="/notes" >振り譜一覧</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/brief_notes">簡易メモ一覧</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/users/:id/edit">ユーザー情報変更</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/logout">ログアウト</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</header>

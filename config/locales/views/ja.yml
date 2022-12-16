@@ -20,6 +20,12 @@ ja:
       delete_confirm: '削除しますか？'
       not_authorized: '権限がありません'
       password_resets: 'パスワード変更用にメールを送信しました'
+  headers:
+    logout: 'ログアウト'
+    note: '振り譜一覧'
+    brief_note: 'かんたんメモ一覧'
+    user_information: 'ユーザー情報変更'
+    
   users:
     new:
       title: 'ユーザー登録'
@@ -43,11 +49,6 @@ ja:
       new_user: '新規登録'
       guest_user: 'ゲストとしてログイン'
   notes:
-    index:
-      logout: 'ログアウト'
-      note: 'メモする'
-      brief_note: '簡易メモ'
-      user_information: 'ユーザー情報変更'
     new:
       title: 'メモ新規登録'
       song_title: '曲名'

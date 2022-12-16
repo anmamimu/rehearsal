@@ -1,2 +1,33 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome'; 
+
+body {
+  background-color: #80C6EF;
+}
+
+.sort_link {
+  color: #08031D;
+}
+
+input[type="search"] {
+  width: 700px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+input[type="text"] {
+  width: 500px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.myFont{
+  font-family: 'Hiragino Mincho Pro';
+}
+
+.waku{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+

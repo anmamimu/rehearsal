@@ -1,12 +1,16 @@
-index
-<%= button_to t('.brief_note'), new_brief_note_path, method: :get %>
-<%= button_to t('.note_index'), notes_path, method: :get %>
-<%= render 'shared/flash' %>
-<% @brief_notes.each do |brief_note| %>
-  <tr>
-    <td><%= brief_note.title %></td>
-    <td><%= link_to 'Show', brief_note_path(brief_note), method: :get %></td>
-    <td><%= link_to 'Edit', edit_brief_note_path(brief_note) %></td>
-    <td><%= link_to 'Destroy', brief_note_path(brief_note.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<div class="container text-center">
+  <h1 class="myFont">簡易メモ一覧</h1>
+  <%= button_to t('.brief_note'), new_brief_note_path, method: :get %>
+
+
+    <table class="table w-75 p-3 table-striped table-hover waku">
+      <% @brief_notes.each do |brief_note| %>
+          <tr>
+            <td><%= brief_note.title %></td>
+            <td><%= link_to '詳細を見る', brief_note_path(brief_note), method: :get %></td>
+            <td><%= link_to '編集する', edit_brief_note_path(brief_note) %></td>
+            <td><%= link_to '削除する', brief_note_path(brief_note.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+    </table>
+</div>

@@ -1,7 +1,14 @@
 <div class='top-wrapper'>
   <div class='top-inner-text'>
-    <%= render 'shared/flash' %>
-    <h1>日本舞踊のアプリ</h1>
+
+    <div style="position:absolute; top:60px; left:300px"> 
+      <%= image_tag 'okeiko_ao.png' %>
+    </div>
+
+    <div style="position:absolute; top:100px; right:500px"> 
+      <%= link_to t(".login"), login_path %>
+    </div>
+
     <div class='text-center'>
       <%= link_to t(".login"), login_path %>
       <%= link_to t(".new_user"), new_user_path %>
@@ -9,3 +16,4 @@
     </div>
   </div>
 </div>
+
