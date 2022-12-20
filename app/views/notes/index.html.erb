@@ -1,8 +1,10 @@
 <div class="container text-center">
   <h1 class="myFont">振り譜一覧</h1>
+  <div class="form-group mt-3 mb-3">
+    <td><%= button_to '新規作成', new_note_path, { method: :get, class: "memo" } %></td>
+  </div>
+
   <%= render 'search_form' %>
-  <td><%= link_to '新規作成', new_note_path %></td>
-  
   <div class="text-center">
     <table class="table w-75 p-3 table-striped table-hover waku">
       <thead>
@@ -10,12 +12,14 @@
           <th>
             <th><%= sort_link(@q, :song_title, "曲名", hide_indicator: true) %></th>
             <th><%= sort_link(@q, :singer_name, "歌手名", hide_indicator: true) %></th>
-            <th scope="col"></th>
+            <th><%= sort_link(@q, :created_at, "作成日順", hide_indicator: true) %></th>
             <th scope="col"></th>
             <th scope="col"></th>
           </th>
         </tr>
       </thead>
+
+      <%= paginate @notes, theme: 'bootstrap-5' %>
 
       <tbody>
         <% @notes.each do |note| %>
@@ -25,12 +29,11 @@
             <td><%= note.singer_name %></td>
             <td><%= link_to '詳細を見る', note %></td>
             <td><%= link_to '編集する', edit_note_path(note) %></td>
-            <td><%= link_to '削除する', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to '削除する', note, method: :delete, data: { confirm: '削除しますか?' } %></td>
           </th>
         </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-  <%= paginate @notes, theme: 'bootstrap-5' %>
 </div>

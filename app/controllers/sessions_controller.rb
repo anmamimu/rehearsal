@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+  def new; end
+
   def create
     if @user = login(params[:email], params[:password])
       redirect_back_or_to notes_url, success: 'ログインしました'
@@ -26,6 +28,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(root_url, primary: 'ログアウトしました')
+    redirect_to(root_url, success: 'ログアウトしました')
   end
 end

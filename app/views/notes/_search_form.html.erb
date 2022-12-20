@@ -1,4 +1,4 @@
     <%= search_form_for @q, url: search_notes_path do |f| %>
       <%= f.search_field :song_title_or_singer_name_i_cont_any, placeholder: t('defaults.search_word') %>
-      <%= f.submit '検索' %>
+      <%= f.submit '検索', class: 'btn btn-secondary btn-lg' %>
     <% end %>

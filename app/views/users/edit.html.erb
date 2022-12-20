@@ -1,14 +1,17 @@
-<h2>ユーザー情報変更画面</h2>
+<div class="text-center">
+  <h1 class="myFont mt-sm-2">ユーザー情報変更画面</h1>
 
-<%= form_with model: @user, local: true do |f| %>
-  <%= f.label :email, 'メールアドレス' %>
-  <%= f.text_field :email  %>
+  <div class="container col-8">
+    <div style="background-color:#EDF7FF;">
+      <div class="row">
+        <div class="col-md">
+            <%= render 'form', { user: @user } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <%= f.label :password, 'パスワード' %>
-  <%= f.password_field :password  %>  
-
-  <%= f.label :password_confirmation, 'パスワード確認' %>
-  <%= f.password_field :password_confirmation  %>     
-
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="text-center mt-sm-3">
+  <td><%= link_to 'ユーザー情報を削除する', @user, method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'syousai' %></td>
+</div>

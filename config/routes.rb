@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/guest_login' => 'sessions#guest_login'
   post '/guest_login' => 'sessions#guest_login'
-  delete '/logout' => 'sessions#destroy'
+  
 
 
   get '/note/hashtag/:name' => 'notes#hashtag'

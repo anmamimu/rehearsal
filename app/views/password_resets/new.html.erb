@@ -1,14 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t '.title' %></h1>
-      <%= form_with url: password_resets_path, local: true do |f| %>
-        <div class="form-group">
-          <%= f.label :email, t('password_resets.new.email') %><br />
-          <%= f.email_field :email, class: 'form-control' %>
+<div class="text-center">
+  <h1 class="myFont mt-sm-2">パスワードを変更しますか？</h1>
+
+  <div class="container col-8">
+    <div style="background-color:#EDF7FF;">
+      <div class="row">
+        <div class="col-md">
+          <%= form_with url: password_resets_path, local: true do |f| %>
+            <div class="form-group mt-3 mb-3">
+              <%= f.label :email, t('password_resets.new.email') %><br/>
+              <%= f.text_field :email%>
+            </div>
+            <%= f.submit t('password_resets.new.submit'),class: 'btn btn-outline-primary' %>
+          <% end %>
         </div>
-        <%= f.submit t('password_resets.new.submit'),class: 'btn btn-primary' %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

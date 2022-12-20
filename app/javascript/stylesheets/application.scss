@@ -3,6 +3,9 @@
 
 body {
   background-color: #80C6EF;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
 .sort_link {
@@ -21,8 +24,19 @@ input[type="text"] {
   border-radius: 20px;
 }
 
+input[type="password"]{
+  width: 500px;
+  height: 50px;
+  border-radius: 20px;
+}
+
 .myFont{
   font-family: 'Hiragino Mincho Pro';
+  font-size: 70px;
+  font-weight: bolder;
+  color: #007DC5;
+  -webkit-text-stroke: 1px #FFF;
+  text-stroke: 1px #FFF;
 }
 
 .waku{
@@ -31,3 +45,69 @@ input[type="text"] {
   margin-right: auto;
 }
 
+footer{
+  width: 100%;
+  color: #0000008c;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
+
+#note_content{
+  text-align: left;
+}
+
+.btn-outline-primary{
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  color:#fff;
+  background: #00AEEF;
+  font-family: 'Hiragino Mincho Pro';
+  font-weight: bolder;
+}
+
+.btn-outline-primary:hover {
+  color:#fff;
+  background:#007DC5;
+}
+
+.memo{
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  color:#fff;
+  background: #00A2A4;
+  font-family: 'Hiragino Mincho Pro';
+  font-weight: bolder;
+}
+
+.memo:hover {
+  color:#fff;
+  background: #007C8A;
+}
+
+.syousai{
+  font-size: 20px;
+  color:#fff;
+  background: #00A2A4;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 20px;
+  padding: 5px;
+}
+
+.syousai:hover {
+  color:#00A2A4;
+  background: #fff;
+}
+
+.alert-success{
+  color:#fff;
+  background: #00A2A4;
+}
+
+.alert-danger{
+  color:#fff;
+  background: #b84c97;
+}

@@ -10,6 +10,8 @@
 // images in galleries will be squished by the max-width: 33%; rule.
 .trix-content {
   background-color: white;
+  width: 910px;
+  height: 300px;
   .attachment-gallery {
     > action-text-attachment,
     > .attachment {

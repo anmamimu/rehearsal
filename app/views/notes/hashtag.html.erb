@@ -11,9 +11,9 @@
           <tr>
             <td><%= note.song_title %></td>
             <td><%= note.singer_name %></td>
-            <td><%= link_to 'Show', note %></td>
-            <td><%= link_to 'Edit', edit_note_path(note) %></td>
-            <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to '詳細を見る', note %></td>
+            <td><%= link_to '編集する', edit_note_path(note) %></td>
+            <td><%= link_to '削除する', note, method: :delete, data: { confirm: '削除しますか?' } %></td>
           </tr>
         <% end %>
       </ul>

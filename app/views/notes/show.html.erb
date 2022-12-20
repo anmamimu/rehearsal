@@ -1,6 +1,37 @@
-<%= render_with_hashtags(@note.hashbody) %>
-<div>タイトル: <%= @note.song_title %></div>
-<div>歌手名: <%= @note.singer_name %></div>
-<div>メモ: <%= @note.content %></div>
-<td><%= link_to 'Edit', edit_note_path(@note) %></td>
-<td><%= link_to 'Index', notes_path %></td>
+<div class="text-center m-sm-3">
+  <h1 class="myFont mt-sm-2">振り譜詳細画面</h1>
+    <td><%= link_to '編集する', edit_note_path(@note), class: 'syousai' %></td>
+    <td><%= link_to '振り譜一覧に戻る', notes_path, class: 'syousai' %></td>
+    <td><%= link_to '削除する', @note, method: :delete, data: { confirm: '削除しますか?' }, class: 'syousai' %></td>
+</div>
+
+<div class="container col-8">
+  <div style="background-color:#EDF7FF;">
+    <div class="row">
+      <div class="col-md">
+        <%= render_with_hashtags(@note.hashbody) %>
+
+        <div class="form-group m-sm-3">
+          <div style="color: #00A2A4;">
+            <%="曲名:"%>
+          </div>
+          <div><%= @note.song_title %></div>
+        </div>
+
+        <div class="form-group m-sm-3">
+          <div style="color: #00A2A4;">
+            <%="歌手名:"%>
+          </div>
+          <div><%= @note.singer_name %></div>
+        </div>
+
+        <div class="form-group m-sm-3">
+          <div style="color: #00A2A4;">
+            <%="振り譜:"%>
+          </div>
+          <div><%= @note.content %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
