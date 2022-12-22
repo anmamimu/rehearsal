@@ -40,6 +40,11 @@ gem 'ransack'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 
+gem 'carrierwave'
+gem 'carrierwave-audio'
+gem 'audiojs-rails'
+gem 'cloudinary'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

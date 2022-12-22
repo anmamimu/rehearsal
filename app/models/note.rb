@@ -6,6 +6,8 @@ class Note < ApplicationRecord
 
   validates :song_title, :singer_name, length: { maximum: 50 }
 
+  mount_uploader :audio, AudiofileUploader
+
   after_create do
     note = Note.find_by(id: self.id)
     hashtags  = self.hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー亜-黑?？!！0-9０-９]+/)

@@ -1,5 +1,9 @@
   <%= form_with model: note, local: true do |f| %>
       <div class="form-group mt-3 mb-3">
+        <%= f.label '音声を登録できます' %><br>
+        <%= f.file_field :field, :size => 140 %>
+      </div>
+      <div class="form-group mt-3 mb-3">
         <%= f.label '曲名' %><br>
         <%= f.text_field :song_title %>
       </div>

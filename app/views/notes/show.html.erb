@@ -2,7 +2,13 @@
   <h1 class="myFont mt-sm-2">振り譜詳細画面</h1>
     <td><%= link_to '編集する', edit_note_path(@note), class: 'syousai' %></td>
     <td><%= link_to '振り譜一覧に戻る', notes_path, class: 'syousai' %></td>
-    <td><%= link_to '削除する', @note, method: :delete, data: { confirm: '削除しますか?' }, class: 'syousai' %></td>
+    <td><%= link_to '削除する', @note, method: :delete, data: { confirm: '削除しますか?' }, class: 'syousai' %></td><br>
+    
+    <div class="mt-sm-3">
+      <audio src= "<%= "#{@note.audio}" %>" controls="">
+        <a src="<%= "#{@note.audio}" %>">ダウンロード</a>
+      </audio>
+    </div>
 </div>
 
 <div class="container col-8">
