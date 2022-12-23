@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root 'static_pages#top'
+  get 'terms_of_service', to: 'static_pages#terms_of_service'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
