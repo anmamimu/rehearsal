@@ -37,6 +37,8 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'ransack'
 
+gem 'meta-tags'
+
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 
@@ -44,6 +46,9 @@ gem 'carrierwave'
 gem 'carrierwave-audio'
 gem 'audiojs-rails'
 gem 'cloudinary'
+
+gem 'sitemap_generator'
+gem 'whenever', require: false
 
 
 group :development, :test do
