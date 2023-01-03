@@ -45,15 +45,9 @@ class NotesController < ApplicationController
 
   def hashtag
     @user = current_user
-    if params[:name].nil?
-      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.notes.count}
-    else
-      @hashtag = Hashtag.find_by(hashname: params[:name])
-      @note = @hashtag.notes
-      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.notes.count}
-    end
+    @hashtag = Hashtag.find_by(hashname: params[:name])
+    @notes = @hashtag.notes
   end
-
 
   private
 

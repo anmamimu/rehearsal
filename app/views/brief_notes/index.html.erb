@@ -1,17 +1,34 @@
-<div class="container text-center">
-  <h1 class="myFont">簡易メモ一覧</h1>
-  <div class="form-group mt-3 mb-3">
-    <%= button_to t('.brief_note'), new_brief_note_path, { method: :get, class: "memo" } %>
-  </div>
+<div class="container text-center m-ms-3">
 
-    <table class="table w-75 p-3 table-striped table-hover waku">
-      <% @brief_notes.each do |brief_note| %>
-          <tr>
-            <td><%= brief_note.title %></td>
-            <td><%= link_to '詳細を見る', brief_note_path(brief_note), method: :get %></td>
-            <td><%= link_to '編集する', edit_brief_note_path(brief_note) %></td>
-            <td><%= link_to '削除する', brief_note_path(brief_note.id), method: :delete, data: { confirm: '削除しますか?' } %></td>
-          </tr>
-        <% end %>
-    </table>
+  <div class="row">
+    <h1 class="myFont m-ms-3">
+      <p>簡易メモ<br class="sma">一覧</p>
+    </h1>
+
+    <div class="container text-center m-ms-3 col-sm-12">
+      <div class="form-group mt-3 mb-3">
+        <%= button_to t('.brief_note'), new_brief_note_path, { method: :get, class: "memo" } %>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <tbody>
+          <% @brief_notes.each do |brief_note| %>
+            <tr>
+              <th>
+                <div class="border border-5 border-index">
+                  <div class="my-sm-2">
+                    <td><%= "タイトル:" %></td>
+                    <td><%= brief_note.title %></td>
+                  </div>
+                    <td><%= link_to '詳細を見る', brief_note_path(brief_note), method: :get %></td>
+                    <td><%= link_to '編集する', edit_brief_note_path(brief_note) %></td>
+                    <td><%= link_to '削除する', brief_note_path(brief_note.id), method: :delete, data: { confirm: '削除しますか?' } %></td>
+                </div>
+              </th>
+            </tr>
+          <% end %>
+      </tbody>
+    </div>
+  </div>
 </div>

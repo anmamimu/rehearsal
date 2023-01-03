@@ -1,34 +1,32 @@
-<div class="row">
-  <td><%= link_to 'Index', notes_path %></td>
+<div class="container text-center">
+  <h1 class="myFont m-ms-3">
+      <p>ハッシュ<br class="sma">タグ一覧</p>
+  </h1>
+    <td><%= link_to '振り譜一覧に戻る', notes_path, class: 'syousai' %></td>
 
-  <% if params[:name] == nil %>
+  <div class="mt-sm-5">
+    <% if params[:name] == nil %>
+    <% else %>
 
-  <% else %>
-
-    <h2><%= @hashtag.hashname %></h2>
-      <ul>
-        <% @note.each do |note| %>
+      <h2><%= @hashtag.hashname %></h2>
+      <tbody>
+        <% @notes.each do |note| %>
           <tr>
-            <td><%= note.song_title %></td>
-            <td><%= note.singer_name %></td>
-            <td><%= link_to '詳細を見る', note %></td>
-            <td><%= link_to '編集する', edit_note_path(note) %></td>
-            <td><%= link_to '削除する', note, method: :delete, data: { confirm: '削除しますか?' } %></td>
+            <th>
+              <div class="border border-5 border-index">
+                <div class="my-sm-2">
+                  <td><%= note.song_title %></td>
+                  <td><%= "/" %></td>
+                  <td><%= note.singer_name %></td><br>
+                </div>
+                  <td><%= link_to '詳細を見る', note %></td>
+                  <td><%= link_to '編集する', edit_note_path(note) %></td>
+                  <td><%= link_to '削除する', note, method: :delete, data: { confirm: '削除しますか?' } %></td>
+              </div>
+            </th>
           </tr>
         <% end %>
-      </ul>
-      
-      <div class="row">
-        <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
-          <div class= "hashtag-name">
-            <% @hashtags.sort.reverse.each do |count| %>
-              <% count[1].each do |hashtag| %>
-                <p><%= link_to  "##{hashtag.hashname} (#{hashtag.notes.count}) 件","/note/hashtag/#{hashtag.hashname}",data: {"turbolinks" => false} %>
-                </p>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-  <% end %>
+      </tbody>
+    <% end %>
+  </div>
 </div>

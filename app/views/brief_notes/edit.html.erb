@@ -1,13 +1,13 @@
 <div class="text-center">
-  <h1 class="myFont mt-sm-2">簡易メモ編集画面</h1>
+    <h1 class="myFont m-ms-3">
+      <p>簡易メモ<br class="sma">編集画面</p>
+    </h1>
 
-  <div class="container col-8">
-    <div style="background-color:#EDF7FF;">
-      <div class="row">
-        <div class="col-md">
-            <%= render 'form', { brief_note: @brief_note } %>
+      <div class="container border-ao-min">
+        <div class="row">
+          <div class="col-md">
+              <%= render 'form', { brief_note: @brief_note } %>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 </div>

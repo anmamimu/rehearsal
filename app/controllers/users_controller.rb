@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_url
+      auto_login(@user)
+      redirect_to notes_path, success: 'ユーザー登録しました'
     else
+      flash.now[:danger] = 'ユーザー登録できませんでした'
       render :new
     end
   end
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update!(user_params)
+    if @user.update(user_params)
       redirect_to notes_path, success: t('defaults.message.updated', item: 'ユーザー情報')
     else
       flash.now[:danger] = t('defaults.message.not_updated', item: 'ユーザー情報')

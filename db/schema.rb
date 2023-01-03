@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2022_12_20_083056) do
   end
 
   create_table "brief_notes", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "body", null: false
+    t.string "title"
+    t.text "body"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

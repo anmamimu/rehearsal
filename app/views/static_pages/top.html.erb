@@ -1,24 +1,23 @@
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <div style="position:absolute; top:100px; left:300px"> 
-      <%= image_tag 'okeiko_ao.png' %>
-    </div>
-    <div class="container col-8">
-      <div style="position:absolute; top:100px; right:60px"> 
-          <div class="row">
-            <div class="col-md">
-              <div class="form-group mt-3 mb-3 myFont">
-                <%= link_to t(".login"), login_path %><br>
-              </div>
-              <div class="form-group mt-3 mb-3 myFont">
-                <%= link_to t(".new_user"), new_user_path %><br>
-              </div>
-              <div class="form-group mt-3 mb-3 myFont">
-                <%= link_to t(".guest_user"), guest_login_path %><br>
-              </div>
-              </div>
-            </div>
-          </div>
+<div class="text-center">
+  <%= image_tag 'okeiko_awase.png', size: '500x500', class: 'top_image' %>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= link_to new_user_path do %><br>
+          <%= image_tag 'sinkitouroku.png', size: '200x200' %>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to login_path do %><br>
+          <%= image_tag 'login.png', size: '200x200' %>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to guest_login_path do %><br>
+          <%= image_tag 'guest.png', size: '200x200' %>
+        <% end %>
       </div>
     </div>
   </div>

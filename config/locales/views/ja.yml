@@ -47,7 +47,7 @@ ja:
     top:
       login: 'ログイン'
       new_user: '新規登録'
-      guest_user: 'ゲストとしてログイン'
+      guest_user: 'ゲスト'
   notes:
     new:
       title: 'メモ新規登録'
