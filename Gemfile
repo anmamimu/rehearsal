@@ -13,7 +13,6 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
-gem 'net-smtp'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -50,6 +49,7 @@ gem 'cloudinary'
 gem 'sitemap_generator'
 gem 'whenever', require: false
 
+gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
 

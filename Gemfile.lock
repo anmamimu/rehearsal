@@ -176,6 +176,10 @@ GEM
     msgpack (1.6.0)
     multi_xml (0.6.0)
     nested_form (0.3.2)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
     net-pop (0.1.1)
       digest
       net-protocol
@@ -321,6 +325,7 @@ GEM
     sqlite3 (1.5.2-arm64-darwin)
     sqlite3 (1.5.2-x86_64-linux)
     ssrf_filter (1.1.1)
+    strscan (3.0.3)
     temple (0.9.1)
     thor (1.2.1)
     tilt (2.0.11)
@@ -381,6 +386,7 @@ DEPENDENCIES
   letter_opener_web (~> 1.0)
   listen (~> 3.3)
   meta-tags
+  net-imap
   net-pop
   net-smtp
   pry-rails
