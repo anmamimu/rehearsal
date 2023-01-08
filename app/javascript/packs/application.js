@@ -11,7 +11,7 @@ import "channels";
 import "bootstrap";
 import "jquery";
 import '@fortawesome/fontawesome-free/js/all';
-import "../stylesheets/application.scss";
+import "../stylesheets/application";
 
 
 
