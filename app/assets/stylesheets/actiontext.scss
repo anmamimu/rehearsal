@@ -10,8 +10,6 @@
 // images in galleries will be squished by the max-width: 33%; rule.
 .trix-content {
   background-color: white;
-  width: 860px;
-  height: 300px;
   .attachment-gallery {
     > action-text-attachment,
     > .attachment {
@@ -31,28 +29,8 @@
   }
 }
 
-@media screen and (min-width:768px) and ( max-width:1024px) {
-  .trix-content {
-    width: 700px;
-    height: 270px;
-  }
-}
-
-@media screen and (min-width:480px) and ( max-width:768px) {
-  .trix-content {
-    width: 500px;
-    height: 270px;
-  }
-}
-
-@media screen and ( max-width:480px )
-{
-  .trix-content {
-    width: 360px;
-    height: 270px;
-  }
-
-  .trix-button-row{
-    font-size: 14px;
-  }
+.trix-editor {
+  min-height: 20em;
+  max-height: 20em;
+  overflow-y: auto;
 }
