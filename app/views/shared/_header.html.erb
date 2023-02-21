@@ -18,7 +18,7 @@
             <a class="nav-link" href="/brief_notes">簡易メモ一覧</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/users/:id/edit">ユーザー情報変更</a>
+            <a class="nav-link" href="/users/<%= current_user.id %>/edit">ユーザー情報変更</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/logout" data-method="delete">ログアウト</a>
