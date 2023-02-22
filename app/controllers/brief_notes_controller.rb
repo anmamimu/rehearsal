@@ -19,17 +19,13 @@ class BriefNotesController < ApplicationController
     end
   end
 
-  def show
-    @brief_note = BriefNote.find(params[:id])
-  end
-
   def edit; end
 
   def update
       if @brief_note.update(brief_note_params)
         redirect_to brief_notes_path, success: t('defaults.message.updated', item: '簡易メモ')
       else
-        flash.now[:danger] = t('efaults.message.not_updated', item: '簡易メモ')
+        flash.now[:danger] = t('defaults.message.not_updated', item: '簡易メモ')
         render :edit
       end
   end

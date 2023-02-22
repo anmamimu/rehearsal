@@ -140,6 +140,7 @@ footer{
   border-radius: 30px;
   margin: 0 auto;
   background: #00A2A4;
+  overflow-y: auto;
 }
 
 .sma {
@@ -164,13 +165,38 @@ footer{
 }
 
 .border-ao-min{
-  width: 910px;
-  height: 300px;
+  width: 600px;
+  height: 350px;
   overflow-y: auto;
   border-radius: 10px;
   background: #B1E8ED;
 }
 
+textarea {
+  resize: none;
+  width:400px;
+  height:150px;
+}
+
+.pink_decoration{
+  color: #E86ED0;
+}
+
+.btn-success{
+  color: #fff;
+  background: #00A2A4;
+  margin-top: auto;
+}
+
+.btn-success:hover {
+  color:#fff;
+  background: #007C8A;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
 
 /*ケータイのフォームサイズ*/
 @media screen and ( max-width:479px )
@@ -236,5 +262,11 @@ footer{
   .top_image{
     width: 300px;
     height: 300px;
+  }
+
+  textarea {
+    resize: none;
+    width:350px;
+    height:170px;
   }
 }

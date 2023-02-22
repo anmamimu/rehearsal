@@ -6,9 +6,15 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-    attribute:
-      name:
+    attributes:
+      user:
         email: "メール"
+      brief_note:
+        body: "メモ"
+      note:
+        song_title: "曲名"
+        singer_name: "歌手名"
+        hashbody: "ハッシュタグ"
   date:
     abbr_day_names:
     - 日
