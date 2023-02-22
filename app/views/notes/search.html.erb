@@ -1,34 +1,41 @@
 <div class="container text-center">
-  <h1 class="myFont">検索結果</h1>
-  <div class="form-group mt-3 mb-3">
-    <td><%= button_to '一覧へ戻る', notes_path, { method: :get, class: "memo" }  %></td>
-  </div>
+  <div class="row">
+    <h1 class="myFont">検索結果</h1>
+    <div class="form-group mt-3 mb-3">
+      <td><%= button_to '一覧へ戻る', notes_path, { method: :get, class: "memo" }  %></td>
+    </div>
     <div class="text-center">
       <table class="table w-75 p-3 table-striped table-hover waku">
         <thead>
           <tr>
             <th>
-            <th><%= sort_link(@q, :song_title, "曲名", hide_indicator: true) %></th>
-            <th><%= sort_link(@q, :singer_name, "歌手名", hide_indicator: true) %></th>
+            <th><%= sort_link(@q, :song_title, "楽曲名順", hide_indicator: true) %></th>
+            <th><%= sort_link(@q, :singer_name, "歌手名順", hide_indicator: true) %></th>
             <th colspan="3"></th>
           </tr>
         </thead>
-
+      </table>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
         <tbody>
           <% if @results.present? %>
             <% @results.each do |note| %>
-              <tr>
-                <td><%= note.song_title %></td>
-                <td><%= note.singer_name %></td>
-                <td><%= link_to '詳細を見る', note %></td>
-                <td><%= link_to '編集する', edit_note_path(note) %></td>
-                <td><%= link_to '削除する', note, method: :delete, data: { confirm: '削除してもよろしいですか?' } %></td>
-              </tr>
+              <div class="card-group">
+                <div class="card card-body ">
+                  <a href="/notes/<%= note.id %>" data-method="delete" data-confirm='削除しますか?'>
+                    <i class="fa-solid fa-trash fa-pull-right pink_decoration"></i>
+                  </a>
+                  <h2 class="card-title"><%= note.song_title %></h2>
+                  <p class="card-text"><%= note.singer_name %></p>
+                  <a href="/note/hashtag/<%=note.hashbody %>"><%= note.hashbody %></a>
+                  <a href="/notes/<%= note.id %>" class="btn btn-success">詳細を見る</a>
+                </div>
+              </div>
             <% end %>
           <% else %>
-            <h4 class="text-center top-text p-3"><%= "一致する検索結果は見つかりませんでした" %></h3>
+            <h4 class="text-center top-text p-3"><%= "一致する振り譜はございませんでした" %></h3>
           <% end %>
         </tbody>
-      </table>
+      </div>
     </div>
+  </div>
 </div> 

@@ -44,6 +44,7 @@
             </a>
             <h2 class="card-title"><%= note.song_title %></h2>
             <p class="card-text"><%= note.singer_name %></p>
+            <a href="/note/hashtag/<%=note.hashbody %>"><%= note.hashbody %></a>
             <a href="/notes/<%= note.id %>" class="btn btn-success">詳細を見る</a>
           </div>
         </div>
