@@ -1,0 +1,24 @@
+<div class="text-center">
+  <%= image_tag 'okeiko_awase.png', size: '500x500', class: 'top_image' %>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= link_to new_user_path do %><br>
+          <%= image_tag 'sinkitouroku.png', size: '200x200' %>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to login_path do %><br>
+          <%= image_tag 'login.png', size: '200x200' %>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <%= link_to guest_login_path do %><br>
+          <%= image_tag 'guest.png', size: '200x200' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

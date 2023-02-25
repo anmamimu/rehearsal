@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to notes_path, success: 'ユーザー登録しました'
+      redirect_to selection_screen_url, success: 'ユーザー登録しました'
     else
       flash.now[:danger] = 'ユーザー登録できませんでした'
       render :new

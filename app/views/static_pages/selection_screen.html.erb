@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <h1 class="myFont mt-sm-3 mb-sm-5"><p>選択画面</p></h1>
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <%= link_to notes_path do %>
+        <%= image_tag 'ume.jpg', size: '300x200' %>
+      <% end %>
+      <%= link_to new_note_path do %>
+        <%= image_tag 'sakura.jpg', size: '300x200' %>
+      <% end %>
+      <%= link_to brief_notes_path do %>
+        <%= image_tag 'kaniitiran.jpg', size: '300x200' %>
+      <% end %>
+      <%= link_to new_brief_note_path do %>
+        <%= image_tag 'kanisakusei.jpg', size: '300x200' %>
+      <% end %>
+    </div>
+  </div>
+</div>

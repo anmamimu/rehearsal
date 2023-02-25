@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = login(params[:email], params[:password])
-      redirect_back_or_to notes_url, success: 'ログインしました'
+      redirect_back_or_to selection_screen_url, success: 'ログインしました'
     else
       flash[:danger] = 'ログイン失敗'
       render :new
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     role: 'general'
     )
     auto_login(@guest_user)
-    redirect_to notes_url, success: 'ゲストとしてログインしました'
+    redirect_to selection_screen_url, success: 'ゲストとしてログインしました'
   end
 
   def destroy

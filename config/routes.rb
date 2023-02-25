@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
 
+  get '/selection_screen' => 'static_pages#selection_screen'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
@@ -11,7 +13,6 @@ Rails.application.routes.draw do
   get '/guest_login' => 'sessions#guest_login'
   post '/guest_login' => 'sessions#guest_login'
   
-
 
   get '/note/hashtag/:name' => 'notes#hashtag'
   get '/note/hashtag' => 'notes#hashtag'
