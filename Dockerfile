@@ -1,10 +1,9 @@
-#applicationのディレクトリ名で置き換えてください
 ARG APP_NAME=nitibu
-#使いたいrubyのimage名に置き換えてください
+
 ARG RUBY_IMAGE=ruby:3.1.2
-#使いたいnodeのversionに置き換えてください(`15.14.0`ではなく`15`とか`16`とかのメジャーバージョン形式で書いてください)
+
 ARG NODE_VERSION='15'
-#インストールするbundlerのversionに置き換えてください
+
 ARG BUNDLER_VERSION=2.3.7
 
 FROM $RUBY_IMAGE
@@ -22,7 +21,7 @@ ENV RAILS_LOG_TO_STDOUT true
 RUN mkdir /$APP_NAME
 WORKDIR /$APP_NAME
 
-# 別途インストールが必要なものがある場合は追加してください
+
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
 && wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
