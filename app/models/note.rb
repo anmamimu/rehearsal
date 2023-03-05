@@ -8,10 +8,6 @@ class Note < ApplicationRecord
 
   mount_uploader :audio, AudiofileUploader
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["song_title", "singer_name"]
-  end
-
   after_create do
     note = Note.find_by(id: self.id)
     hashtags  = self.hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー亜-黑?？!！0-9０-９]+/)

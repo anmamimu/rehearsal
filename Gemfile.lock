@@ -266,7 +266,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
     rake (13.0.6)
-    ransack (4.0.0)
+    ransack (3.2.1)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
@@ -392,7 +392,7 @@ DEPENDENCIES
   rails (~> 6.1.7)
   rails-i18n
   rails_admin (~> 2.0)
-  ransack
+  ransack (= 3.2.1)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   sitemap_generator
