@@ -1,17 +1,13 @@
 class AudiofileUploader < CarrierWave::Uploader::Base
+
+  include CarrierWave::Audio
+
+  storage :fog
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production?
-    include Cloudinary::CarrierWave
-    CarrierWave.configure do |config|
-      config.cache_storage = :file
-    end
-  else
-    storage :file
-  end
-  # storage :fog
+  
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -19,7 +15,7 @@ class AudiofileUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  include CarrierWave::Audio
+  
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

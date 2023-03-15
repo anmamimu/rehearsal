@@ -44,7 +44,6 @@ gem 'cancancan'
 gem 'carrierwave'
 gem 'carrierwave-audio'
 gem 'audiojs-rails'
-gem 'cloudinary'
 
 gem 'sitemap_generator'
 gem 'whenever', require: false
@@ -52,6 +51,9 @@ gem 'whenever', require: false
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
+
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 
 group :development, :test do
