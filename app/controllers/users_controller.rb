@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create]
-  before_action :infometion, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: %i[new create]
+  before_action :infometion, only: %i[show edit update destroy]
 
   def new
     @user = User.new

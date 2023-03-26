@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class NotesController < ApplicationController
   skip_before_action :require_login, only: :create
-  before_action :find_note, only: [:show, :edit, :update, :destroy]
-  before_action :set_q, only: [:index, :search]
+  before_action :find_note, only: %i[show edit update destroy]
+  before_action :set_q, only: %i[index search]
 
   def index
     @notes = @q.result.order(created_at: :desc).page(params[:page])
@@ -18,9 +20,9 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to notes_path, success: t('defaults.message.created', item: '新規メモ')
     else
-      flash.now[:danger] =  t('defaults.message.not_created', item: '新規メモ')
+      flash.now[:danger] = t('defaults.message.not_created', item: '新規メモ')
       render :new
-    end 
+    end
   end
 
   def edit; end
@@ -62,5 +64,4 @@ class NotesController < ApplicationController
   def set_q
     @q = current_user.notes.ransack(params[:q])
   end
-
 end

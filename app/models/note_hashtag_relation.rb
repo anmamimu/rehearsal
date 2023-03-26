@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NoteHashtagRelation < ApplicationRecord
   belongs_to :note
   belongs_to :hashtag

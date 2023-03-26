@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class BriefNotesController < ApplicationController
-  before_action :find_brief_note, only: [:edit, :update, :destroy]
+  before_action :find_brief_note, only: %i[edit update destroy]
 
   def index
     @brief_notes = current_user.brief_notes.all
@@ -22,12 +24,12 @@ class BriefNotesController < ApplicationController
   def edit; end
 
   def update
-      if @brief_note.update(brief_note_params)
-        redirect_to brief_notes_path, success: t('defaults.message.updated', item: '簡易メモ')
-      else
-        flash.now[:danger] = t('defaults.message.not_updated', item: '簡易メモ')
-        render :edit
-      end
+    if @brief_note.update(brief_note_params)
+      redirect_to brief_notes_path, success: t('defaults.message.updated', item: '簡易メモ')
+    else
+      flash.now[:danger] = t('defaults.message.not_updated', item: '簡易メモ')
+      render :edit
+    end
   end
 
   def destroy

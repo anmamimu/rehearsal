@@ -1,0 +1,35 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'db/schema.rb'
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - "db/migrate/*.rb"
+    - "app/helpers/application_helper.rb"
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - "bin/bundle"
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Layout/LineLength:
+  Exclude:
+    - "app/controllers/password_resets_controller.rb"

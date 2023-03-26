@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.example.com"
+SitemapGenerator::Sitemap.default_host = 'http://www.example.com'
 
 SitemapGenerator::Sitemap.create do
-
-  add articles_path, :priority => 0.7, :changefreq => 'daily'
+  add articles_path, priority: 0.7, changefreq: 'daily'
 
   Article.find_each do |article|
-    add article_path(article), :lastmod => article.updated_at
+    add article_path(article), lastmod: article.updated_at
   end
   # Put links creation logic here.
   #

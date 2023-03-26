@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 class PasswordResetsController < ApplicationController
   skip_before_action :require_login
 
   def new; end
 
-  def create 
+  def create
     @user = User.find_by_email(params[:email])
-    @user.deliver_reset_password_instructions! if @user
+    @user&.deliver_reset_password_instructions!
     redirect_to login_path, success: t('defaults.message.password_resets')
   end
 
@@ -13,10 +15,10 @@ class PasswordResetsController < ApplicationController
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
 
-    if @user.blank?
-      not_authenticated
-      return
-    end
+    return unless @user.blank?
+
+    not_authenticated
+    nil
   end
 
   def update
@@ -40,7 +42,7 @@ class PasswordResetsController < ApplicationController
     mail = false
     config = sorcery_config
     return false if config.reset_password_time_between_emails.present? && send(config.reset_password_email_sent_at_attribute_name) && send(config.reset_password_email_sent_at_attribute_name) > config.reset_password_time_between_emails.seconds.ago.utc
-  
+
     self.class.sorcery_adapter.transaction do
       generate_reset_password_token!
       mail = send_reset_password_email! unless config.reset_password_mailer_disabled
@@ -60,6 +62,6 @@ class PasswordResetsController < ApplicationController
   def change_password(new_password, raise_on_failure: false)
     clear_reset_password_token
     send(:"#{sorcery_config.password_attribute_name}=", new_password)
-    sorcery_adapter.save raise_on_failure: raise_on_failure
+    sorcery_adapter.save raise_on_failure:
   end
 end

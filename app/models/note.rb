@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Note < ApplicationRecord
   belongs_to :user
   has_rich_text :content
@@ -9,8 +11,8 @@ class Note < ApplicationRecord
   mount_uploader :audio, AudiofileUploader
 
   after_create do
-    note = Note.find_by(id: self.id)
-    hashtags  = self.hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー亜-黑?？!！0-9０-９]+/)
+    note = Note.find_by(id:)
+    hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー亜-黑?？!！0-9０-９]+/)
     note.hashtags = []
     hashtags.uniq.map do |hashtag|
       tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
@@ -18,10 +20,10 @@ class Note < ApplicationRecord
     end
   end
 
-  before_update do 
-    note = Note.find_by(id: self.id)
+  before_update do
+    note = Note.find_by(id:)
     note.hashtags.clear
-    hashtags = self.hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー亜-黑?？!！0-9０-９]+/)
+    hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー亜-黑?？!！0-9０-９]+/)
     hashtags.uniq.map do |hashtag|
       tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
       note.hashtags << tag

@@ -1,5 +1,6 @@
-class AudiofileUploader < CarrierWave::Uploader::Base
+# frozen_string_literal: true
 
+class AudiofileUploader < CarrierWave::Uploader::Base
   include CarrierWave::Audio
 
   storage :fog
@@ -7,15 +8,12 @@ class AudiofileUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   # Choose what kind of storage to use for this uploader:
-  
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
-  
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

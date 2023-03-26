@@ -1,5 +1,6 @@
-RailsAdmin.config do |config|
+# frozen_string_literal: true
 
+RailsAdmin.config do |config|
   config.authenticate_with do
     require_login
     redirect_to root_path unless current_user.admin?

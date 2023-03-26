@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create, :guest_login]
+  skip_before_action :require_login, only: %i[new create guest_login]
 
   def index
     @user = User.new
@@ -8,7 +10,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    if @user = login(params[:email], params[:password])
+    if (@user = login(params[:email], params[:password]))
       redirect_back_or_to selection_screen_url, success: 'ログインしました'
     else
       flash[:danger] = 'ログイン失敗'
@@ -18,9 +20,9 @@ class SessionsController < ApplicationController
 
   def guest_login
     @guest_user = User.create(
-    email: SecureRandom.alphanumeric(10) + "@email.com",
-    password: 'password',
-    role: 'general'
+      email: "#{SecureRandom.alphanumeric(10)}@email.com",
+      password: 'password',
+      role: 'general'
     )
     auto_login(@guest_user)
     redirect_to selection_screen_url, success: 'ゲストとしてログインしました'
